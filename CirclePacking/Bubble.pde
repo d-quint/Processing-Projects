@@ -94,8 +94,4 @@ class Bubble {
     public boolean isTouchingEdge() {
         return (x + r > width || x - r < 0 || y + r > height || y - r < 0);
     }
-
-    private color generateColor() {
-        return color(random(255), random(255), random(255));
-    }
 }
