@@ -81,7 +81,7 @@ class Pendulum {
         float y = ep_1.y + (percent * (ep_2.y - ep_1.y));
 
         // We could probably also do this below instead, but it looked ugly so no
-        // position = new PVector(0, 0).add(ep_1.add((ep_2.sub(ep_1)).mult(percent)))
+        // return new PVector(0, 0).add(ep_1.add((ep_2.sub(ep_1)).mult(percent)));
 
         return new PVector(x, y);
     }
