@@ -77,11 +77,8 @@ class Pendulum {
     }   
 
     PVector getBallPosition() {
-        float x = ep_1.x + (percent * (ep_2.x - ep_1.x));
-        float y = ep_1.y + (percent * (ep_2.y - ep_1.y));
-
-        // We could probably also do this below instead, but it looked ugly so no
-        // return new PVector(0, 0).add(ep_1.add((ep_2.sub(ep_1)).mult(percent)));
+        float x = lerp(ep_1.x, ep_2.x, percent);
+        float y = lerp(ep_1.y, ep_2.y, percent);
 
         return new PVector(x, y);
     }
