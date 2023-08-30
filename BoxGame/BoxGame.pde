@@ -1,4 +1,4 @@
-import processing.sound.*;
+import processing.sound.SoundFile;
 
 SoundFile sfx_sweep, sfx_win, sfx_tap, sfx_bgm;
 
