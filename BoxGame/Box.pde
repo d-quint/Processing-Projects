@@ -43,13 +43,11 @@ class Box {
 
   void updatePosition() {
     if (isAnimating) {
-      float dx = targetX - x;
-      float dy = targetY - y;
-      x += dx * EASING_FACTOR;
-      y += dy * EASING_FACTOR;
+      x = lerp(targetX, x, EASING_FACTOR);
+      y = lerp(targetY, y, EASING_FACTOR);
 
       // Check if the animation is finished
-      if (abs(dx) < 1 && abs(dy) < 1) {
+      if (abs(targetX - x) < 1 && abs(targetY - y) < 1) {
         x = targetX;
         y = targetY;
         

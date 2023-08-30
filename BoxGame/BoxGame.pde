@@ -3,7 +3,7 @@ import processing.sound.SoundFile;
 SoundFile sfx_sweep, sfx_win, sfx_tap, sfx_bgm;
 
 final int GRID_SIZE = 60;
-final float EASING_FACTOR = 0.2f;
+final float EASING_FACTOR = 0.8f;
 
 int numRows, numCols;
 BoxManager boxManager;
