@@ -126,7 +126,7 @@ class Pan {
         popMatrix();
     }
 }
-final float PANCAKE_EASING_FACTOR = 0.6f;
+final float PANCAKE_EASING_FACTOR = 0.95f;
 
 class Pancake {
     float bodyWidth, thickness;

@@ -1,4 +1,4 @@
-final float PANCAKE_EASING_FACTOR = 0.6f;
+final float PANCAKE_EASING_FACTOR = 0.25f;
 
 class Pancake {
     float bodyWidth, thickness;
