@@ -52,7 +52,7 @@ class Pan {
         pushMatrix();
 
         translate(pos.x, pos.y);
-        fill(255);
+        fill(PLAYER_COLOR);
         noStroke();
         rectMode(CENTER);
         rect(0, 0, bodyWidth, thickness, 5);

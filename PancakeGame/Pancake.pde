@@ -78,7 +78,8 @@ class Pancake {
 
         translate(pos.x, pos.y);
         fill(PANCAKE_COLOR);
-        stroke(0);
+        strokeWeight(2.5);
+        stroke(PANCAKE_OUTLINE);
         rectMode(CENTER);
         rect(0, 0, bodyWidth, thickness, 10);
 

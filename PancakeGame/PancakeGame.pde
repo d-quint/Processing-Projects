@@ -1,7 +1,10 @@
 final color SKY_BLUE = color(195, 238, 250);
 final color PASTEL_RED = color(220, 180, 200);
 
-final color PANCAKE_COLOR = color(247,215,136);
+final color PANCAKE_COLOR = color(228, 207, 172);
+final color PANCAKE_OUTLINE = color(205, 174, 119);
+
+final color PLAYER_COLOR = color(255);
 
 final float PLAYER_WIDTH = 100;
 final float PANCAKE_WIDTH = 110;
