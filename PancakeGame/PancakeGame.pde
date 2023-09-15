@@ -15,38 +15,38 @@ Pancake cakes;
 // ----------------------------------------------------------
 
 void setup() {
-    size(1000, 600, P2D);
-    loadPixels();
-    player = new Pan(PLAYER_WIDTH);
-    cakes = new Pancake(player, PANCAKE_WIDTH);
+  size(1000, 600, P2D);
+  loadPixels();
+  player = new Pan(PLAYER_WIDTH);
+  cakes = new Pancake(player, PANCAKE_WIDTH);
 }
 
 void draw() {
-    fillGradient(SKY_BLUE, PASTEL_RED);
-    player.update();
-    cakes.update();
+  fillGradient(SKY_BLUE, PASTEL_RED);
+  player.update();
+  cakes.update();
 }
 
 void mousePressed() {
-    cakes.addChild();
+  cakes.addChild();
 }
 
 // ----------------------------------------------------------
 
 void fillGradient(color c1, color c2) {
-    /* 
-     *  This function draws a vertical linear gradient
-     *  (from top to bottom) with the given two colors.
-     */
-
-    for (int y = 0; y < height; y++) {
-        float percent = (float) y / height;
-        color c = lerpColor(c1, c2, percent);
-
-        for (int x = 0; x < width; x++) {
-            pixels[y * width + x] = c;
-        }
+  /*
+  *  This function draws a vertical linear gradient
+  *  (from top to bottom) with the given two colors.
+  */
+  
+  for (int y = 0; y < height; y++) {
+    float percent = (float) y / height;
+    color c = lerpColor(c1, c2, percent);
+    
+    for (int x = 0; x < width; x++) {
+      pixels[y * width + x] = c;
     }
-
-    updatePixels();
+  }
+  
+  updatePixels();
 }
