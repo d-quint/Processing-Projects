@@ -19,6 +19,7 @@ void setup() {
   loadPixels();
   player = new Pan(PLAYER_WIDTH);
   cakes = new Pancake(player, PANCAKE_WIDTH);
+  fallingCakes = new FallingPancakes();
 }
 
 void draw() {
