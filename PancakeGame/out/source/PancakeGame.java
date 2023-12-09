@@ -28,6 +28,7 @@ final float PANCAKE_WIDTH = 110;
 
 Pan player;
 Pancake cakes;
+FallingPancakes fallingCakes;
 
 // ----------------------------------------------------------
 
@@ -36,12 +37,14 @@ public void setup() {
   loadPixels();
   player = new Pan(PLAYER_WIDTH);
   cakes = new Pancake(player, PANCAKE_WIDTH);
+  fallingCakes = new FallingPancakes(5);
 }
 
 public void draw() {
   fillGradient(SKY_BLUE, PASTEL_RED);
   player.update();
   cakes.update();
+  fallingCakes.update();
 }
 
 public void mousePressed() {
@@ -66,6 +69,76 @@ public void fillGradient(int c1, int c2) {
   }
   
   updatePixels();
+}
+class FallingPancake {
+  final PVector ACC = new PVector(0.f, 0.98f);
+  final float CAKE_RADIUS = PANCAKE_WIDTH * 0.5f;
+  final float BELOW_HEIGHT = 50.f;
+
+  PVector pos, vel;
+
+  FallingPancake() {
+    this.pos = new PVector(random(width), random(-100, 0));
+    this.vel = new PVector(random(0, 5), random(0, 5));
+  }
+
+  FallingPancake(PVector pos, PVector vel) {
+    this.pos = pos;
+    this.vel = vel;
+  }
+
+  public void update() {
+    move();
+    render();
+  }
+  
+  private void move() {
+    this.vel = vel.add(ACC);
+    this.pos = pos.add(vel);
+
+    if (pos.y >= height + BELOW_HEIGHT) {
+      this.pos = new PVector(random(width), random(-100, 0));
+      this.vel = new PVector(random(0, 5), random(0, 5));
+    }
+  }
+  
+  private void render() {
+    pushMatrix();
+    
+    translate(pos.x, pos.y);
+    fill(PANCAKE_COLOR);
+    strokeWeight(2.5f);
+    stroke(PANCAKE_OUTLINE);
+    ellipseMode(RADIUS);
+    ellipse(0.f, 0.f, CAKE_RADIUS, CAKE_RADIUS);
+    
+    popMatrix();
+  }
+}
+class FallingPancakes {
+  ArrayList<FallingPancake> fallingPancakes;
+
+  FallingPancakes(int numOfPancakes) {
+    fallingPancakes = new ArrayList<FallingPancake>();
+
+    for (int i = 0; i < numOfPancakes; i++) {
+      fallingPancakes.add(new FallingPancake());
+    }
+  }
+
+  public void update() {
+    if (fallingPancakes.size() == 0) {
+      return;
+    }
+
+    for (FallingPancake pancake : fallingPancakes) {
+      pancake.update();
+    }
+  }
+
+  public void addPancake() {
+    fallingPancakes.add(new FallingPancake());
+  }
 }
 final int OFFSET = 50;
 final float EASING_FACTOR = 0.925f;

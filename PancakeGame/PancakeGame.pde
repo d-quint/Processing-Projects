@@ -20,13 +20,14 @@ void setup() {
   loadPixels();
   player = new Pan(PLAYER_WIDTH);
   cakes = new Pancake(player, PANCAKE_WIDTH);
-  fallingCakes = new FallingPancakes();
+  fallingCakes = new FallingPancakes(5);
 }
 
 void draw() {
   fillGradient(SKY_BLUE, PASTEL_RED);
   player.update();
   cakes.update();
+  fallingCakes.update();
 }
 
 void mousePressed() {

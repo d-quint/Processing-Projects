@@ -1,11 +1,15 @@
 class FallingPancakes {
   ArrayList<FallingPancake> fallingPancakes;
 
-  FallingPancakes() {
+  FallingPancakes(int numOfPancakes) {
     fallingPancakes = new ArrayList<FallingPancake>();
+
+    for (int i = 0; i < numOfPancakes; i++) {
+      fallingPancakes.add(new FallingPancake());
+    }
   }
 
-  void renderAll() {
+  void update() {
     if (fallingPancakes.size() == 0) {
       return;
     }
@@ -13,5 +17,9 @@ class FallingPancakes {
     for (FallingPancake pancake : fallingPancakes) {
       pancake.update();
     }
+  }
+
+  void addPancake() {
+    fallingPancakes.add(new FallingPancake());
   }
 }
