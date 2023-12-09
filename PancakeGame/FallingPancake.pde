@@ -25,7 +25,7 @@ class FallingPancake {
     this.pos = pos.add(vel);
 
     if (pos.y >= height + BELOW_HEIGHT) {
-      this.pos = new PVector(random(width), random(-100, 0));
+      this.pos = new PVector(random(width), random(-1000, 0));
       this.vel = new PVector(random(0, 5), random(0, 5));
     }
   }
