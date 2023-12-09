@@ -13,7 +13,7 @@ Pan player;
 Pancake cakes;
 FallingPancakes fallingCakes;
 
-// ----------------------------------------------------------
+// ---------------------------------------------------------- ugh super slow rn on my pc sorry
 
 void setup() {
   size(1000, 600, P2D);

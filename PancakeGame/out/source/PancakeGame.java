@@ -49,6 +49,7 @@ public void draw() {
 
 public void mousePressed() {
   cakes.addChild();
+  fallingCakes.addPancake();
 }
 
 // ----------------------------------------------------------
