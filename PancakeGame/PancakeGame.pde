@@ -11,6 +11,7 @@ final float PANCAKE_WIDTH = 110;
 
 Pan player;
 Pancake cakes;
+FallingPancakes fallingCakes;
 
 // ----------------------------------------------------------
 
